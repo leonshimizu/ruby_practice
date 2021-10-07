@@ -18,6 +18,10 @@ class Employee
     @salary = 1.05 * @salary
   end
 
+  def test
+    p 1
+  end
+
 end
 
 employee1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true})
@@ -46,10 +50,32 @@ class Manager < Employee
     end
   end
 
+  def fire_all_employees
+    i = 0
+    @employees.length.times do
+      @employees[i].active = false 
+      p @employees[i].active
+    end
+  end
+
+  def test
+    p 5
+  end
+
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 # manager.print_info
 # manager.send_report
 
-manager.give_all_raises
+# manager.give_all_raises
+
+# manager.fire_all_employees
+
+# Bonus
+# I'm going to test it but I believe what happens is the method will get overwritten to when the code runs
+
+employee1.test
+manager.test
+employee2.test
+manager.test
