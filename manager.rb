@@ -55,6 +55,7 @@ class Manager < Employee
     @employees.length.times do
       @employees[i].active = false 
       p @employees[i].active
+      i += 1
     end
   end
 
@@ -70,12 +71,11 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 
 # manager.give_all_raises
 
-# manager.fire_all_employees
+manager.fire_all_employees
+p employee1.active
+p employee2.active
 
-# Bonus
-# I'm going to test it but I believe what happens is the method will get overwritten to when the code runs
-
-employee1.test
-manager.test
-employee2.test
-manager.test
+# employee1.test
+# manager.test
+# employee2.test
+# manager.test
